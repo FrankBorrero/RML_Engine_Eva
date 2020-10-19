@@ -1,0 +1,486 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix gtfs: <http://vocab.gtfs.org/terms#> .
+@prefix dct: <http://purl.org/dc/terms/> . 
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix schema:	<http://schema.org/> .
+
+gtfs:AgencyShape a sh:NodeShape ;
+      sh:targetClass gtfs:Agency;
+      sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ;
+      sh:property [
+        sh:path foaf:name;
+        sh:datatype xsd:string;
+        sh:minCount 1; 
+        sh:maxCount 1;       
+      ];
+        sh:property[
+        sh:path foaf:page;
+        sh:nodeKind sh:IRI;
+        sh:minCount 1;
+        sh:maxCount 1;        
+      ];
+     sh:property [
+        sh:path gtfs:timeZone;
+        sh:datatype xsd:string;        
+        sh:minCount 1;     
+     ];
+     sh:property [
+       sh:path dct:language;
+       sh:datatype xsd:string;
+      ];
+      sh:property[
+     	sh:path foaf:phone;
+        sh:nodeKind sh:IRI;              
+     ];
+     sh:property[
+     	sh:path   gtfs:fareUrl;
+         sh:nodeKind sh:IRI;         
+     ].
+
+gtfs:StopShape a sh:NodeShape ;
+    sh:targetClass gtfs:Stop;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ; 
+    sh:property [
+        sh:path foaf:name;
+        sh:datatype xsd:string;
+        sh:minCount 1;        
+      ];
+      sh:property[
+        sh:path geo:long;
+        sh:datatype xsd:double;
+        sh:minInclusive  -180.0;
+        sh:maxInclusive 180.0;
+        sh:minCount 1;
+        sh:maxCount 1;
+      ];
+      sh:property[
+        sh:path geo:lat;
+        sh:datatype xsd:double;
+        sh:minInclusive  -90.0;
+        sh:maxInclusive 90.0;
+        sh:minCount 1;
+        sh:maxCount 1;
+      ];
+      sh:property[
+        sh:path dct:identifier;
+        sh:datatype xsd:string;
+      ];
+      sh:property[
+        sh:path gtfs:code;
+        sh:minCount 1;
+        sh:or (
+			[
+				sh:datatype xsd:string ;
+			]
+			[
+				sh:class xsd:integer ;
+			]
+		)
+      ];
+      sh:property[
+        sh:path dct:description;
+      ];
+      sh:property[
+        sh:path gtfs:locationType
+      ];
+      sh:property[
+        sh:path gtfs:zone
+      ];
+      sh:property[
+        sh:path foaf:page;
+      ];
+       sh:property [
+        sh:path gtfs:timeZone;
+        sh:datatype xsd:string;             
+     ];
+     sh:property[
+       sh:path gtfs:parentStation;
+     ];
+     sh:property[
+       sh:path gtfs:wheelchairAccessible;
+     ].
+
+gtfs:RouteShape a sh:NodeShape ;
+    sh:targetClass gtfs:Route;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ; 
+
+    sh:property[
+      sh:path gtfs:shortName;
+      sh:datatype xsd:string;
+      sh:minCount 1;
+
+    ];
+    sh:property[
+      sh:path gtfs:longName ;
+      sh:datatype xsd:string;
+      sh:minCount 1;
+      
+    ];
+    sh:property[
+      sh:path gtfs:routeType ;
+      sh:class gtfs:RouteType;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:agency ;
+      sh:class gtfs:Agency;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path dct:description;
+    ];
+
+    sh:property[
+      sh:path gtfs:routeUrl;
+      sh:nodeKind sh:IRI;
+      sh:disjoint foaf:page;
+
+    ];
+
+    sh:property[
+      sh:path gtfs:color;
+      sh:datatype xsd:string;
+    ];
+
+    sh:property[
+     sh:path gtfs:textColor; 
+     sh:datatype xsd:string;
+    ].
+
+gtfs:TripsShape a sh:NodeShape ;
+    sh:targetClass gtfs:Trip;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ; 
+
+    sh:property[
+      sh:path gtfs:service;
+      sh:class gtfs:Service;
+      sh:minCount 1;
+    ];
+    sh:property[
+      sh:path gtfs:route;
+      sh:class gtfs:Route;
+      sh:minCount 1;
+    ];   
+
+    sh:property[
+      sh:path gtfs:headsign;
+      sh:datatype xsd:string;
+    ];
+
+    sh:property[
+     sh:path gtfs:shortName;
+     sh:datatype xsd:string;
+    ];
+
+    sh:property[
+      sh:path gtfs:direction;
+      sh:datatype xsd:boolean;
+    ];
+    
+    sh:property[
+      sh:path gtfs:block;
+      sh:datatype xsd:string;
+    ];
+
+    sh:property[
+      sh:path gtfs:shape;
+      sh:class gtfs:Shape;
+    ];
+    
+    sh:property[
+      sh:path gtfs:wheelchairAccessible;
+      sh:datatype xsd:string;
+    ];
+
+    sh:property[
+      sh:path gtfs:bikesAllowed;
+      sh:datatype xsd:boolean;
+    ].
+
+gtfs:StopTimeShape a sh:NodeShape ;
+    sh:targetClass gtfs:StopTime;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ; 
+    
+    sh:property[
+      sh:path gtfs:trip;
+      sh:class gtfs:Trip;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:arrivalTime;
+      sh:datatype xsd:string;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:departureTime;
+      sh:datatype xsd:string;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:stop;
+      sh:class gtfs:Stop;
+      sh:minCount 1;
+
+    ];
+
+    sh:property[
+      sh:path gtfs:stopSequence;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:headsign;
+      sh:datatype xsd:string
+    ];
+
+    sh:property[
+      sh:path gtfs:pickupType; 
+      sh:datatype gtfs:string
+    ];
+
+    sh:property[
+      sh:path gtfs:dropOffType;
+      sh:datatype xsd:string;
+    ];
+
+    sh:property[
+      sh:path gtfs:distanceTraveled;
+      sh:datatype xsd:string;
+    ].
+
+gtfs:CalendarRuleShape a sh:NodeShape ;
+    sh:targetClass gtfs:CalendarRule;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ; 
+
+    sh:property[
+      sh:path gtfs:monday;
+      sh:datatype xsd:boolean;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:tuesday;
+      sh:datatype xsd:boolean;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:Wednesday;
+      sh:datatype xsd:boolean;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:Thursday;
+      sh:datatype xsd:boolean;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:Friday;
+      sh:datatype xsd:boolean;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:Saturday;
+      sh:datatype xsd:boolean;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:Sunday ;
+      sh:datatype xsd:boolean;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+    sh:property[
+      sh:path dct:temportal;
+    ]. 
+
+gtfs:CalendarDateRuleShape
+ a sh:NodeShape ;
+    sh:targetClass gtfs:CalendarDateRuleShape;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ;  
+    
+    sh:property[
+      sh:path dct:date;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:dateAddition;
+      sh:minCount 1 
+    ]. 
+
+gtfs:ShapePointShape
+  a sh:NodeShape ;
+    sh:targetClass gtfs:CalendarDateRuleShape;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ; 
+
+    sh:property[
+      sh:path geo:long;
+      sh:datatype xsd:double;
+      sh:minInclusive  -180.0;
+      sh:maxInclusive 180.0;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ] ;
+
+    sh:property[
+      sh:path geo:lat;
+      sh:datatype xsd:double;
+      sh:minInclusive  -90.0;
+      sh:maxInclusive 90.0;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:pointSequence;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:distanceTraveled;
+    ].
+
+gtfs:FrequencyShape
+  a sh:NodeShape ;
+    sh:targetClass gtfs:CalendarDateRule;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ;
+
+    sh:property[
+      sh:path gtfs:trip;
+      sh:class gtfs:Trip;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:startTime;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:endTime;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:headwaySeconds ;
+      sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path gtfs:exactTimes;
+      sh:minCount 1;
+    ].
+gtfs:FeedShape  
+  a sh:NodeShape ;
+    sh:targetClass gtfs:Feed;
+    sh:closed true ;
+	  sh:ignoredProperties (rdf:type) ;
+
+    sh:property[
+      sh:path foaf:page;
+      sh:nodeKind sh:IRI;
+      sh:minCount 1;
+      sh:maxCount 1;
+    ];
+
+     sh:property[
+        sh:path dct:language;
+        sh:minCount 1;
+    ];
+
+     sh:property[
+       sh:path dct:publisher;
+       sh:minCount 1;
+    ];
+
+     sh:property[
+       sh:path schema:startDate;
+       sh:minCount 1;
+    ];
+
+     sh:property[
+       sh:path schema:endDate;
+       sh:minCount 1;
+    ];
+
+     sh:property[
+       sh:path schema:version;
+       sh:minCount 1;
+    ];
+
+    sh:property[
+      sh:path dct:title;
+    ];
+
+    sh:property[
+      sh:path dct:issued;
+    ];
+
+    sh:property[
+      sh:path dct:modified;
+    ];
+
+    sh:property[
+      sh:path dcat:contactPoint;
+    ];
+
+    sh:property[
+      sh:path dct:temporal ;
+    ];
+
+    sh:property[
+      sh:path dct:spatial;
+    ];
+
+    sh:property[
+      sh:path dct:publisher;
+    ];
+
+    sh:property[
+      sh:path dct:accrualPeriodicity ;
+    ];
+
+    sh:property[
+      sh:path dct:language;
+    ];
+
+    sh:property[
+      sh:path dcat:distribution;
+    ]. 
+
+
+      
+
+
