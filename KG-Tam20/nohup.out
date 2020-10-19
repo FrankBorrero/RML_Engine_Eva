@@ -1,0 +1,128 @@
+Traceback (most recent call last):
+  File "/home/fborrero/SDM-RDFizer/SDM-RDFizer/rdfizer/run_rdfizer.py", line 1, in <module>
+    from rdfizer.semantify import semantify
+  File "/home/fborrero/SDM-RDFizer/SDM-RDFizer/rdfizer/rdfizer/__init__.py", line 6, in <module>
+    import rdflib
+ModuleNotFoundError: No module named 'rdflib'
+Semantifying KGCase03.nt...
+[Errno 2] No such file or directory: '/home/fborrero/Evaluacion/20/mapping_xml.nt'
+Could not parse /home/fborrero/Evaluacion/20/mapping_xml.nt as a mapping file
+Aborting...
+Killed
+Semantifying KGCase01.nt...
+
+
+TM: http://mapping.example.com/map_services1_0
+
+
+TM: http://mapping.example.com/map_trips_0
+
+
+TM: http://mapping.example.com/map_stops_0
+
+
+TM: http://mapping.example.com/map_stoptimes_0
+
+
+TM: http://mapping.example.com/map_calendar_date_rules_0
+
+
+TM: http://mapping.example.com/map_agency_0
+
+
+TM: http://mapping.example.com/map_shapes_0
+
+
+TM: http://mapping.example.com/map_routes_0
+
+
+TM: http://mapping.example.com/map_calendar_rules_0
+
+
+TM: http://mapping.example.com/map_feed_0
+
+
+TM: http://mapping.example.com/map_frequencies_0
+
+
+TM: http://mapping.example.com/map_services2_0
+Successfully semantified KGCase01.
+
+Semantifying KGCase02.nt...
+
+
+TM: http://mapping.example.com/map_services2_0
+
+
+TM: http://mapping.example.com/map_calendar_rules_0
+
+
+TM: http://mapping.example.com/map_services1_0
+
+
+TM: http://mapping.example.com/map_agency_0
+
+
+TM: http://mapping.example.com/map_calendar_date_rules_0
+
+
+TM: http://mapping.example.com/map_shapes_0
+
+
+TM: http://mapping.example.com/map_stoptimes_0
+
+
+TM: http://mapping.example.com/map_trips_0
+
+
+TM: http://mapping.example.com/map_feed_0
+
+
+TM: http://mapping.example.com/map_stops_0
+
+
+TM: http://mapping.example.com/map_routes_0
+
+
+TM: http://mapping.example.com/map_frequencies_0
+Successfully semantified KGCase02.
+
+Semantifying KGCase04.nt...
+
+
+TM: http://mapping.example.com/map_calendar_rules_0
+
+
+TM: http://mapping.example.com/map_routes_0
+
+
+TM: http://mapping.example.com/map_trips_0
+
+
+TM: http://mapping.example.com/map_services2_0
+
+
+TM: http://mapping.example.com/map_agency_0
+
+
+TM: http://mapping.example.com/map_stops_0
+
+
+TM: http://mapping.example.com/map_services1_0
+
+
+TM: http://mapping.example.com/map_stoptimes_0
+
+
+TM: http://mapping.example.com/map_frequencies_0
+
+
+TM: http://mapping.example.com/map_feed_0
+
+
+TM: http://mapping.example.com/map_shapes_0
+
+
+TM: http://mapping.example.com/map_calendar_date_rules_0
+Successfully semantified KGCase04.
+

@@ -1,0 +1,17 @@
+[
+{"service_id": "0000000000000000000c","monday": "3","tuesday": "3","wednesday": "3","thursday": "3","friday": "3","saturday": "3","sunday": "3","start_date": "2017-07-02","end_date": "2018-07-02"},
+{"service_id": "0000000000000000000a","monday": "4","tuesday": "4","wednesday": "4","thursday": "4","friday": "4","saturday": "4","sunday": "4","start_date": "2017-06-30","end_date": "2018-06-30"},
+{"service_id": "00000000000000000006","monday": "2","tuesday": "2","wednesday": "2","thursday": "2","friday": "2","saturday": "2","sunday": "2","start_date": "2017-07-01","end_date": "2018-07-01"},
+{"service_id": "00000000000000000005","monday": "5","tuesday": "5","wednesday": "5","thursday": "5","friday": "5","saturday": "5","sunday": "5","start_date": "2017-07-02","end_date": "2018-07-02"},
+{"service_id": "00000000000000000003","monday": "0","tuesday": "0","wednesday": "0","thursday": "0","friday": "0","saturday": "0","sunday": "0","start_date": "2017-06-30","end_date": "2018-06-30"},
+{"service_id": "0000000000000000000b","monday": "1","tuesday": "1","wednesday": "1","thursday": "1","friday": "1","saturday": "1","sunday": "1","start_date": "2017-07-01","end_date": "2018-07-01"},
+{"service_id": "00000000000000000008","monday": "3","tuesday": "3","wednesday": "3","thursday": "3","friday": "3","saturday": "3","sunday": "3","start_date": "2017-07-02","end_date": "2018-07-02"},
+{"service_id": "0000000000000000000d","monday": "4","tuesday": "4","wednesday": "4","thursday": "4","friday": "4","saturday": "4","sunday": "4","start_date": "2017-06-30","end_date": "2018-06-30"},
+{"service_id": "0000000000000000000f","monday": "2","tuesday": "2","wednesday": "2","thursday": "2","friday": "2","saturday": "2","sunday": "2","start_date": "2017-07-01","end_date": "2018-07-01"},
+{"service_id": "00000000000000000004","monday": "5","tuesday": "5","wednesday": "5","thursday": "5","friday": "5","saturday": "5","sunday": "5","start_date": "2017-07-02","end_date": "2018-07-02"},
+{"service_id": "00000000000000000009","monday": "0","tuesday": "0","wednesday": "0","thursday": "0","friday": "0","saturday": "0","sunday": "0","start_date": "2017-06-30","end_date": "2018-06-30"},
+{"service_id": "00000000000000000002","monday": "1","tuesday": "1","wednesday": "1","thursday": "1","friday": "1","saturday": "1","sunday": "1","start_date": "2017-07-01","end_date": "2018-07-01"},
+{"service_id": "0000000000000000000e","monday": "3","tuesday": "3","wednesday": "3","thursday": "3","friday": "3","saturday": "3","sunday": "3","start_date": "2017-07-02","end_date": "2018-07-02"},
+{"service_id": "00000000000000000001","monday": "4","tuesday": "4","wednesday": "4","thursday": "4","friday": "4","saturday": "4","sunday": "4","start_date": "2017-06-30","end_date": "2018-06-30"},
+{"service_id": "00000000000000000007","monday": "2","tuesday": "2","wednesday": "2","thursday": "2","friday": "2","saturday": "2","sunday": "2","start_date": "2017-07-01","end_date": "2018-07-01"}
+]
